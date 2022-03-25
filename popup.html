@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        outline: none;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      *:focus {
+        outline: none;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+        width: 28em;
+        background: #121116;
+        background-image: radial-gradient(top, circle cover, #232327 0%, #151516 80%);
+        color: ghostwhite;
+      }
+
+      .mainbody {
+        text-align: center;
+      }
+      
+      .pre-inline {
+        display: inline;
+      }
+
+      /* // TABS */
+
+      .container--tabs {
+        margin: 1rem 0rem 1rem 0rem;
+      }
+      .container--tabs .nav-tabs {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        list-style-type: none;
+        border-bottom: 0.2rem solid #ff9800
+      }
+      .container--tabs .nav-tabs > li {
+        margin-bottom: 0.1rem;
+      }
+      .container--tabs .nav-tabs > li > a {
+        margin-right: 0.4rem;
+        line-height: 1.42857143;
+        padding: 0.52em;
+        border: 0.2rem solid transparent;
+        border-radius: 4px 4px 0 0;
+        color: rgb(204, 185, 13);
+      }
+      .container--tabs .nav-tabs > li > a:hover {
+        border-color: rgb(255, 208, 53) rgb(132, 182, 40) rgba(185, 95, 21, 0.432) rgb(172, 199, 53);
+      }
+      .container--tabs .nav-tabs > li.active > a,
+      .container--tabs .nav-tabs > li.active > a:hover,
+      .container--tabs .nav-tabs > li.active > a:focus {
+        color: #f44336;
+      cursor: default;
+      background-color: #0000007a;
+      border: 0.2rem solid #dd9003;
+      border-bottom-color: transparent;
+      }
+      .container--tabs .tab-content {
+        float: left;
+        width: 100%;
+      }
+      .container--tabs .tab-content > .tab-pane {
+        display: none;
+      }
+      .container--tabs .tab-content > .tab-pane.active {
+        display: block;
+        padding: 1.5% 1.5%;
+      }
+      .container--tabs .tab-content > .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainbody" style="min-width: 100%">
+      <div class="container--tabs">
+        <section class="row">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-1">Main</a></li>
+            <li class=""><a href="#tab-2">Notes</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="tab-1" class="tab-pane active">
+              <h3 style="font-size: 1.1rem; text-transform: uppercase;">Brave Detection Block</h3>
+              <img id="logo" src="" alt="BDB LOGO" >
+              <h3>While the extension is enabled:</h3>
+              <h3><pre>window.navigator.brave</pre></h3>
+              <h3>can't be accessed by any website</h3>
+ 
+            </div>
+            <div id="tab-2" class="tab-pane" style="font-size: 0.9rem; text-align: left">
+              <h3 style="font-size: 1.1rem; text-transform: uppercase;">Notes</h3>
+              This extension is used to block detection of brave browser by websites.
+              <br /><br />
+              It only blocks the official detection which is checking the <pre class="pre-inline">window.navigator.brave object</pre>.
+              <br /><br />
+              The extension does not touch the <pre class="pre-inline">user-agent</pre> or try to prevent other methods of detecting brave browser.
+              <br /><br />
+              For that reason to employ a higher degree of privacy is recomanded to use an <preclass="pre-inline">user-agent randomizer extension,</pre>
+              set the fingerpint blocking to max in brave settings, and also allow this extension and
+              the user-agent randomizer extension to work in incognito mode.
+              <br /><br />
+              If you want even more privacy than that use a no logs VPN doubled by a brave tor window. 
+              <br /><br />
+              If you're even more privacy focused you could set up a private VPN on a VPS bought with a privacy crypto and only,
+              use DOH for DNS doubled by TOR using only hidden services no exist nodes on a non-persistent OS decrypted at boot time
+              from a scrambled hidden partition.
+              <br /><br />
+              (Don't know why you would employ such effort but I'm just trying to be techincal.)
+              <br /><br />
+              <h3>Check source at:</h3>
+               <a href="https://https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension">
+                https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension
+               </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

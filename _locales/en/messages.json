@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Brave Detection Block",
+    "description": "This extension blocks the official method to detect you use brave browser, install only on Brave browser."
+  },
+  "appDesc": {
+    "message": "Brave Detection Block",
+    "description": "This extension blocks the official method to detect you use brave browser, install only on Brave browser."
+  }
+}

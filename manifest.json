@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "version": "1.0.0",
+  "version_name": "1.0.0",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/BDB-ICON16.png",
+      "32": "images/BDB-ICON32.png",
+      "48": "images/BDB-ICON48.png",
+      "128": "images/BDB-ICON128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "block-script.js" ],
+      "matches": [ "https://*/*" ]
+    }
+  ],
+  "icons": {
+    "16": "images/BDB-ICON16.png",
+    "32": "images/BDB-ICON32.png",
+    "48": "images/BDB-ICON48.png",
+    "128": "images/BDB-ICON128.png",
+    "256": "images/BDB-ICON256.png",
+    "512": "images/BDB-ICON512.png"
+  }
+}
