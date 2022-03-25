@@ -2,13 +2,15 @@
 
 ![BDB LOGO](/images/BDB-ICON256.png?raw=true "BDB LOGO")
 
-Although Brave is a good privacy browser it has some features that are pretty against privacy like an official method for website to detect you are running brave.
+Brave is a good privacy browser despite that it has some features that break some privacy assurances.
 
-This method is by cheking a custom property on the navigator object, accessable at `window.navigator.brave`.
+One of them is an official method for a website to detect you are running brave.
 
-This is probably a point where marketing and data collection coliedes with any privacy ethos.
+This method involves a custom property on the navigator object, accessible at `window.navigator.brave`.
 
-This extension is ment to delete that property and make it impossible to detect if you are running brave using that method.
+This is probably a point where marketing and data collection collides with any privacy concerns.
+
+This extension will block access to that property and make it impossible to detect if you are running Brave browser.
 
 Download from Chrome-Store(only download if you are running Brave)&#x3a;
 
