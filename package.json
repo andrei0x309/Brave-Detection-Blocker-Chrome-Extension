@@ -1,14 +1,13 @@
 {
   "name": "brave-detection-blocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brave extension to block detection of brave browser.",
   "main": "block-script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tag": "yarn config set version-tag-prefix brave-detection-blocker@v &&  yarn config set version-git-message 'brave-detection-blocker@v%s' && yarn version --patch && yarn postversion",
+    "release": "yarn config set version-tag-prefix brave-detection-blocker@v &&  yarn config set version-git-message 'brave-detection-blocker@v%s' && yarn version --patch && yarn postversion",
     "postversion": "git push && git push --tags",
-    "realease": "yarn tag && node ./scripts/create-release.js",
-    "tt": "node ./scripts/create-release.js"
+    "pub": "yarn release && node ./scripts/create-release.js"
   },
   "repository": {
     "type": "git",
