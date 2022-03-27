@@ -1,19 +1,20 @@
-function Navigator() {}
-newNav = new Navigator();
+let nav = function Navigator() {};
+let copyNavRef = window.navigator;
+nav = nav.bind(function () {
+  return window.navigator;
+});
+newNav = new nav();
 const alreadyProxifiedNav = {
-  userAgent: navigator.userAgent,
-  appVersion: navigator.appVersion,
-  platform: navigator.platform,
-  vendor: navigator.vendor,
+  userAgent: window.navigator.userAgent,
+  appVersion: window.navigator.appVersion,
+  platform: window.navigator.platform,
+  vendor: window.navigator.vendor,
 };
 for (let prop in window.navigator) {
   if (prop === 'brave') {
     continue;
   }
-  Object.defineProperty(newNav, prop, {
-    value: window.navigator[prop],
-    writable: true,
-  });
+  newNav.prop = copyNavRef.prop;
 }
 for (let prop in alreadyProxifiedNav) {
   alreadyProxifiedNav.hasOwnProperty(prop) &&
@@ -25,4 +26,6 @@ for (let prop in alreadyProxifiedNav) {
 Object.defineProperty(window, 'navigator', {
   value: newNav,
   writable: true,
+  enumerable: true,
+  configurable: true,
 });
