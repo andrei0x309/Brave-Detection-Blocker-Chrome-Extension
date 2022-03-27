@@ -1,6 +1,7 @@
 const archiver = require('archiver');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const path = require('path');
 
 async function ghRelease(changes) {
   const package = JSON.parse(fs.readFileSync('package.json'));
@@ -20,31 +21,36 @@ async function ghRelease(changes) {
     filePipes.forEach((file) => {
       arch = arch.file(file, { name: file });
     });
-    arch.on('error', (err) => reject(err)).pipe(stream);
+    arch.on('error', (err) => reject(err)).pipe(outputZip);
 
-    stream.on('close', () => resolve());
+    outputZip.on('close', () => resolve());
     arch.finalize();
   });
 
-  const changeLogPath = `releases/${package.version}-changeLog.md`;
+  const changeLogPath = `releases/${package.version}.changelog.md`;
 
   fs.writeFileSync(
     changeLogPath,
-    `# ${package.version} \n\n
+    `# ${package.version} \n
   ${changes.reduce((acc, change) => {
     return acc + `- ${change}\n`;
   }, '')}`,
   );
 
-  await new Promise((resolve) => {
-    const p = spawn('gh', ['release', `create v${package.version} '${outputPath}' -F ${changeLogPath}`]);
-    let result = '';
-    p.stdout.on('data', (data) => (result += data.toString()));
-    p.stderr.on('data', (data) => (result += data.toString()));
-    p.on('close', () => {
-      resolve(result);
-    });
-  });
+  console.log(
+    await new Promise((resolve) => {
+      const p = spawn('gh', ['release', 'create', `v${package.version}`, `./${outputPath}`, '-F', `./${changeLogPath}`], {
+        shell: true,
+      });
+      // const p = spawn('pwd');
+      let result = '';
+      p.stdout.on('data', (data) => (result += data.toString()));
+      p.stderr.on('data', (data) => (result += data.toString()));
+      p.on('close', () => {
+        resolve(result);
+      });
+    }),
+  );
 }
 
 (async () => {
@@ -53,6 +59,6 @@ async function ghRelease(changes) {
     return;
   }
   const changes = process.argv[2].split(',');
-  // ghRelease(changes)
+  await ghRelease(changes);
   console.log('Release created', changes);
 })();

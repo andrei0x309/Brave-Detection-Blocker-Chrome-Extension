@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "yarn config set version-tag-prefix brave-detection-blocker@v &&  yarn config set version-git-message 'brave-detection-blocker@v%s' && yarn version --patch && yarn postversion",
-    "postversion": "git push && git push --tags",
-    "pub": "yarn release && node ./scripts/create-release.js"
+    "postversion": "git push",
+    "pub": "node ./scripts/create-release.js"
   },
   "repository": {
     "type": "git",
