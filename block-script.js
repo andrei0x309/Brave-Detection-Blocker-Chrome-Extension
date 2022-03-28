@@ -9,6 +9,8 @@ const alreadyProxifiedNav = {
   appVersion: window.navigator.appVersion,
   platform: window.navigator.platform,
   vendor: window.navigator.vendor,
+  userLanguage: window.navigator.userLanguage,
+  language: window.navigator.language,
 };
 for (let prop in window.navigator) {
   if (prop === 'brave') {
