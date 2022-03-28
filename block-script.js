@@ -9,7 +9,6 @@ const primitivesNav = {
   appVersion: window.navigator.appVersion,
   platform: window.navigator.platform,
   vendor: window.navigator.vendor,
-  userLanguage: window.navigator.userLanguage,
   language: window.navigator.language,
   cookieEnabled: true,
   appCodeName: window.navigator.appCodeName,
@@ -17,13 +16,14 @@ const primitivesNav = {
   product: window.navigator.product,
   geolocation: window.navigator.geolocation,
   onLine: window.navigator.onLine,
+  sendBeacon: window.navigator.sendBeacon.bind(window.navigator),
 };
 
 for (let prop in window.navigator) {
   if (prop === 'brave') {
     continue;
   }
-  newNav.prop = copyNavRef.prop;
+  newNav[prop] = copyNavRef[prop];
 }
 for (let prop in primitivesNav) {
   primitivesNav.hasOwnProperty(prop) &&
