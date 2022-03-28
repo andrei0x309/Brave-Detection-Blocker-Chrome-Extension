@@ -11,6 +11,7 @@ const alreadyProxifiedNav = {
   vendor: window.navigator.vendor,
   userLanguage: window.navigator.userLanguage,
   language: window.navigator.language,
+  cookieEnabled: true,
 };
 for (let prop in window.navigator) {
   if (prop === 'brave') {
