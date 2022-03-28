@@ -4,7 +4,7 @@ nav = nav.bind(function () {
   return window.navigator;
 });
 newNav = new nav();
-const alreadyProxifiedNav = {
+const primitivesNav = {
   userAgent: window.navigator.userAgent,
   appVersion: window.navigator.appVersion,
   platform: window.navigator.platform,
@@ -12,17 +12,23 @@ const alreadyProxifiedNav = {
   userLanguage: window.navigator.userLanguage,
   language: window.navigator.language,
   cookieEnabled: true,
+  appCodeName: window.navigator.appCodeName,
+  appName: window.navigator.appName,
+  product: window.navigator.product,
+  geolocation: window.navigator.geolocation,
+  onLine: window.navigator.onLine,
 };
+
 for (let prop in window.navigator) {
   if (prop === 'brave') {
     continue;
   }
   newNav.prop = copyNavRef.prop;
 }
-for (let prop in alreadyProxifiedNav) {
-  alreadyProxifiedNav.hasOwnProperty(prop) &&
+for (let prop in primitivesNav) {
+  primitivesNav.hasOwnProperty(prop) &&
     Object.defineProperty(newNav, prop, {
-      value: alreadyProxifiedNav[prop],
+      value: primitivesNav[prop],
       writable: true,
     });
 }
