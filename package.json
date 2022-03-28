@@ -1,6 +1,6 @@
 {
   "name": "brave-detection-blocker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Brave extension to block detection of brave browser.",
   "main": "block-script.js",
   "scripts": {
