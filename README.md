@@ -14,7 +14,7 @@ This extension will block access to that property and make it impossible to dete
 
 Download from Chrome-Store(only download if you are running Brave)&#x3a;
 
-[Brave-Detection-Blocker-Chrome-Extension](https://https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension)
+[Brave-Detection-Blocker-Chrome-Extension](https://chrome.google.com/webstore/detail/brave-detection-block/ckkhcgikplgdginlidcaomgjahmddjgb)
 
 ## Privacy Policy Link&#x3a;
 
