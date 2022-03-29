@@ -17,6 +17,7 @@ const primitivesNav = {
   geolocation: window.navigator.geolocation,
   onLine: window.navigator.onLine,
   sendBeacon: window.navigator.sendBeacon.bind(window.navigator),
+  getBattery: window.navigator.getBattery.bind(window.navigator),
 };
 
 for (let prop in window.navigator) {
