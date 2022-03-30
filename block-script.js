@@ -4,7 +4,7 @@ nav = nav.bind(function () {
   return window.navigator;
 });
 newNav = new nav();
-const primitivesNav = {
+const navClones = {
   userAgent: window.navigator.userAgent,
   appVersion: window.navigator.appVersion,
   platform: window.navigator.platform,
@@ -18,6 +18,13 @@ const primitivesNav = {
   onLine: window.navigator.onLine,
   sendBeacon: window.navigator.sendBeacon.bind(window.navigator),
   getBattery: window.navigator.getBattery.bind(window.navigator),
+  vibrate: window.navigator.vibrate.bind(window.navigator),
+  share: window.navigator.share.bind(window.navigator),
+  canShare: window.navigator.canShare.bind(window.navigator),
+  cleanAppBadge: window.navigator.cleanAppBadge.bind(window.navigator),
+  registerProtocolHandler: window.navigator.registerProtocolHandler.bind(window.navigator),
+  requestMediaKeySystemAccess: window.navigator.requestMediaKeySystemAccess.bind(window.navigator),
+  requestMIDIAccess: window.navigator.requestMIDIAccess.bind(window.navigator),
 };
 
 for (let prop in window.navigator) {
@@ -26,10 +33,10 @@ for (let prop in window.navigator) {
   }
   newNav[prop] = copyNavRef[prop];
 }
-for (let prop in primitivesNav) {
-  primitivesNav.hasOwnProperty(prop) &&
+for (let prop in navClones) {
+  navClones.hasOwnProperty(prop) &&
     Object.defineProperty(newNav, prop, {
-      value: primitivesNav[prop],
+      value: navClones[prop],
       writable: true,
     });
 }
