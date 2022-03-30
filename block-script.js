@@ -21,7 +21,6 @@ const navClones = {
   vibrate: window.navigator.vibrate.bind(window.navigator),
   share: window.navigator.share.bind(window.navigator),
   canShare: window.navigator.canShare.bind(window.navigator),
-  cleanAppBadge: window.navigator.cleanAppBadge.bind(window.navigator),
   registerProtocolHandler: window.navigator.registerProtocolHandler.bind(window.navigator),
   requestMediaKeySystemAccess: window.navigator.requestMediaKeySystemAccess.bind(window.navigator),
   requestMIDIAccess: window.navigator.requestMIDIAccess.bind(window.navigator),
