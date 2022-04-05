@@ -10,6 +10,7 @@ const navClones = {
   platform: window.navigator.platform,
   vendor: window.navigator.vendor,
   language: window.navigator.language,
+  oscpu: window.navigator.oscpu,
   cookieEnabled: true,
   appCodeName: window.navigator.appCodeName,
   appName: window.navigator.appName,
@@ -24,10 +25,12 @@ const navClones = {
   registerProtocolHandler: window.navigator.registerProtocolHandler.bind(window.navigator),
   requestMediaKeySystemAccess: window.navigator.requestMediaKeySystemAccess.bind(window.navigator),
   requestMIDIAccess: window.navigator.requestMIDIAccess.bind(window.navigator),
+  bluetooth: window.navigator.bluetooth.bind(window.navigator),
+  onLine: window.navigator.onLine,
 };
-
+const skipPropList = [...Object.keys(navClones), 'brave'];
 for (let prop in window.navigator) {
-  if (prop === 'brave') {
+  if (skipPropList.includes(prop)) {
     continue;
   }
   newNav[prop] = copyNavRef[prop];
