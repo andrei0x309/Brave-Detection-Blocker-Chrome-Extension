@@ -18,9 +18,22 @@ Navigator = Navigator.bind(window.navigator);
 newNav = new Navigator(window.navigator);
 delete window.navigator.__proto__.brave;
 newNav.__proto__.__proto__ = window.navigator.__proto__;
-Object.defineProperty(window, 'navigator', {
-  value: newNav,
-  writable: false,
-  enumerable: false,
-  configurable: false,
+
+const websiteExceptions = ['accounts.google'];
+
+const check = websiteExceptions.find((website) => {
+  if (window.location.hostname.includes(website)) {
+    return true;
+  }
 });
+
+if (check) {
+  window.navigator.brave = undefined;
+} else {
+  Object.defineProperty(window, 'navigator', {
+    value: newNav,
+    writable: false,
+    enumerable: false,
+    configurable: false,
+  });
+}
