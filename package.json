@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension#readme",
   "devDependencies": {
-    "archiver": "^5.3.0"
+    "archiver": "^5.3.0",
+    "eslint": "^8.3.0"
   }
 }
