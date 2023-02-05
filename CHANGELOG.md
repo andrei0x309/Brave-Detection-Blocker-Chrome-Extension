@@ -2,6 +2,10 @@
 
 [Back to README.md](README.md)
 
+## 1.2.1
+- scrap everything found better method of removing brave field without cloning
+- reverse code to block brave Solana/EVMwallets instead ask the user to disable them manually if he wishes better privacy
+
 ## 1.1.9
 - scrap everything found better method of removing brave field without cloning
 - reverse code to block brave Solana/EVMwallets instead ask the user to disable them manually if he wishes better privacy
