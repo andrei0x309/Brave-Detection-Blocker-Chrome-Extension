@@ -1,13 +1,15 @@
 {
   "name": "brave-detection-blocker",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "description": "Brave extension to block detection of brave browser.",
   "main": "block-script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "yarn config set version-tag-prefix brave-detection-blocker@v &&  yarn config set version-git-message 'brave-detection-blocker@v%s' && yarn version --patch && yarn postversion",
+    "build": "bun run ./scripts/build.ts",
+    "release": "bun run ./scripts/version-release.ts",
     "postversion": "git push",
-    "pub": "yarn release && node ./scripts/create-release.js"
+    "pub": "bun run build && bun run release && bun run ./release-scripts/create-release.ts",
+    "only-pub": "bun run build && bun run ./release-scripts/create-release.ts"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,8 @@
   },
   "keywords": [
     "brave detectionblocker",
+    "brave detection blocker",
+    "brave detection blocker chrome extension",
     "browser extension"
   ],
   "author": "andrei0x309",
@@ -24,7 +28,8 @@
   },
   "homepage": "https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension#readme",
   "devDependencies": {
-    "archiver": "^5.3.0",
-    "eslint": "^8.3.0"
+    "@types/archiver": "^6.0.3",
+    "archiver": "^7.0.1",
+    "eslint": "^9.30.1"
   }
 }

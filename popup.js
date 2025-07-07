@@ -1,5 +1,13 @@
 'use strict'
 
+const openTab = (url) => {
+    chrome.tabs.create({
+        url
+    })
+}
+
+const getVersion = () => chrome?.runtime?.getManifest()?.version ?? ''
+
 const myTabs = document.querySelectorAll('ul.nav-tabs > li')
 function myTabClicks(tabClickEvent) {
     for (let i = 0; i < myTabs.length; i++) {
@@ -28,3 +36,16 @@ for (let i = 0; i < myTabs.length; i++) {
 
 const imgURL = chrome.runtime.getURL('images/BDB-ICON256.png')
 document.getElementById('logo').src = imgURL
+
+const versionLink = document.getElementById('version-link')
+if(versionLink) {
+    versionLink.addEventListener('click', (e) => {
+        e.preventDefault()
+        openTab('https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension')
+    })
+}
+
+const versionHolder = document.getElementById('version-holder')
+if(versionHolder) {
+    versionHolder.innerText = `${getVersion()}`
+}
