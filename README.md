@@ -42,3 +42,7 @@ More information about how websites detect Brave is available at this issue: [ht
 Discord: andrei0x309
 Website: [https://flashsoft.eu](https://flashsoft.eu)
 Github: [andrei0x309](https://github.com/andrei0x309)
+
+### Video Demo&#x3a;
+
+https://github.com/user-attachments/assets/aac5a411-cc6d-41ed-8974-25d5dd4836ba
