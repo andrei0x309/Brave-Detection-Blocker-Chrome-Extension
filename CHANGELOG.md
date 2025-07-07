@@ -4,14 +4,15 @@
 
 ## 1.3.2
 
-- move to bun instead of yarn ( running development scripts requires bun runtime )
-- updated archiver
+- move to Bun.js instead of yarn ( running development scripts requires Bun.js runtime )
+- updated archiver library to latest version
 - remove content script and inject using "MAIN" method for newer chromium enngines
-- rewrote development scripts to use bun and be more structured
-- updated Readme
+- rewrote development scripts to use Bun.js and be more structured
+- updated ReadMe,md with more relevant information
 - updated text in extension UI notes
-- updated development scripts to use TS and bun ( created build script, release script and version script )
+- updated development scripts to use TS and Bun.js ( created build script, release script and version script )
 - removed unecessary files & code
+- added version link in the popup that links the GitHub repo
 
 ## 1.2.1
 
