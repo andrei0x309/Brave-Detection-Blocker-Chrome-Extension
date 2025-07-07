@@ -4,7 +4,7 @@
     "description": "Brave Detection Block"
   },
   "appDesc": {
-    "message": "This extension blocks the official method to detect you use brave browser, install only on Brave browser.",
-    "description": "This extension blocks the official method to detect you use brave browser, install only on Brave browser."
+    "message": "This extension blocks the most common method to detect you use Brave browser, is efective only on Brave browser.",
+    "description": "This extension blocks  most common method to detect you use Brave browser, is efective only on Brave browser."
   }
 }

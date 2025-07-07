@@ -83,14 +83,14 @@
       }
       
       /* GitHub Link */
-      .github-link {
+      .gh-link {
         color: #e6e6e6;
         text-decoration: none;
         font-size: 0.85rem;
         font-weight: bold;
       }
 
-      .github-link:hover {
+      .gh-link:hover {
         color: #f44336;
         transform: scale(1.1);
         transition: all 0.2s ease-in-out;
@@ -109,43 +109,46 @@
           <div class="tab-content">
             <div id="tab-1" class="tab-pane active">
               <h3 style="font-size: 1.1rem; text-transform: uppercase;">Brave Detection Block</h3>
+              <a class="gh-link" href="#" id="version-link"><pre>Version: <span id="version-holder"></span></pre></a>
               <img id="logo" src="" alt="BDB LOGO" >
               <h3>While the extension is enabled:</h3>
               <h3><pre>window.navigator.brave</pre></h3>
-              <h3>can't be accessed by any website</h3>
+              <h3>is removed</h3>
  
             </div>
             <div id="tab-2" class="tab-pane" style="font-size: 0.9rem; text-align: left">
               <h3 style="font-size: 1.1rem; text-transform: uppercase;">Notes</h3>
-              This extension is used to block detection of brave browser by websites.
+ This extension's primary function is to block websites to detect you run Brave browser.
               <br /><br />
-              It only blocks the official detection which is checking the <pre class="pre-inline">window.navigator.brave object</pre>.
+It only blocks the most common detection method which is checking the <pre class="pre-inline">window.navigator.brave object</pre>, and will potentially allow you to use websites that obstruct the Brave browser from accessing the page.
               <br /><br />
-              The extension does not touch the <pre class="pre-inline">user-agent</pre> or try to prevent other methods of detecting brave browser.
+ The extension does not touch the <pre class="pre-inline">User-Agent</pre> or try to prevent other methods of detecting Brave browser.
               <br /><br />
-              For that reason to employ a higher degree of privacy is recomanded to use an <preclass="pre-inline">user-agent randomizer extension,</pre>
-              set the fingerpint blocking to max in brave settings, and also allow this extension and
-              the user-agent randomizer extension to work in incognito mode.
-              Also turn off brave wallets as they will have brave fingerprints.
-              <br /><br />
-              If you want even more privacy than that use a no logs VPN doubled by a brave tor window. 
-              <br /><br />
-              If you're even more privacy focused you could set up a private VPN on a VPS bought with a privacy crypto and only,
-              use DOH for DNS doubled by TOR using only hidden services no exist nodes on a non-persistent OS decrypted at boot time
-              from a scrambled hidden partition.
-              <br /><br />
-              (Don't know why you would employ such effort but I'm just trying to be technical.)
-              <br /><br />
-              <h3>Check source at:</h3>
-               <a class="github-link" href="https://https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension">
-                https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension
+ Additional steps one may take to improve privacy:
+              <ul>
+                <li> Turn off Brave crypto wallets that also allow websites to detect you are using Brave browser.</li>
+                <li>Use an User Agent randomizer</li>
+                <li>Turn off Brave Shields ( can be used to track Ad Blocker)</li>
+                <li>Use a trusted no Logs VPN</li>
+                <li>Use a new private browser session, which no previous store data</li>
+                <li>Have as few extensions as possible as some may leave traces and increase fingerprint surface</li>
+                <li>Use only open source extensions and inspect the source</li>
+                <li>In critical cases you can also double up the traffic through TOR</li>
+                <li>Only use a desktop environment that is secure and that you trust</li>
+              </ul>
+              <h3>Check Source Code and ReadMe(GitHub):</h3>
+               <a class="gh-link" href="https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension">
+ https://github.com/andrei0x309/Brave-Detection-Blocker-Chrome-Extension
+               </a>
+               <h3>Author (GitHub Profile):</h3>
+               <a class="gh-link" href="https://github.com/andrei0x309">
+ https://github.com/andrei0x309
                </a>
             </div>
           </div>
         </section>
       </div>
     </div>
-
     <script src="popup.js"></script>
   </body>
 </html>
