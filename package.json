@@ -1,6 +1,6 @@
 {
   "name": "brave-detection-blocker",
-  "version": "1.3.2",
+  "version": "1.3.1",
   "description": "Brave extension to block detection of brave browser.",
   "main": "block-script.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "build": "bun run ./scripts/build.ts",
     "release": "bun run ./scripts/version-release.ts",
     "postversion": "git push",
-    "pub": "bun run build && bun run release && bun run ./release-scripts/create-release.ts",
-    "only-pub": "bun run build && bun run ./release-scripts/create-release.ts"
+    "pub": "bun run build && bun run release && bun run ./scripts/create-release.ts",
+    "only-pub": "bun run build && bun run ./scripts/create-release.ts"
   },
   "repository": {
     "type": "git",
